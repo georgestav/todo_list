@@ -1,7 +1,7 @@
 import { useState } from "react";
-import question from "./img/question.svg";
-import check from "./img/check.svg";
-import cross from "./img/cross.svg";
+import question from "../img/question.svg";
+import check from "../img/check.svg";
+import cross from "../img/cross.svg";
 
 export const Toggle = () => {
 	//set initial status to question
