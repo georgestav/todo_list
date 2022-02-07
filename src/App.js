@@ -1,23 +1,27 @@
-import logo from "./logo.svg";
 import "./App.scss";
+import { TodoItems } from "./todo_items";
 
+const thingsTodo = [
+	{ title: "task 1", note: "Do all the react exercises of the day" },
+	{ title: "task 2", note: "Do the last weeks remaining exercises" },
+	{ title: "task 3", note: "Send some CVs" },
+	{ title: "task 4", note: "Eat" },
+	{ title: "task 5", note: "Send some more CVs" },
+	{ title: "task 6", note: "Go though my mails" },
+	{ title: "task 7", note: "Take the trash out" },
+];
+console.log(thingsTodo);
 function App() {
 	return (
-		<div className="App">
-			<header className="App-header">
-				<img src={logo} className="App-logo" alt="logo" />
-				<p>
-					Edit <code>src/App.js</code> and save to reload.
-				</p>
-				<a
-					className="App-link"
-					href="https://reactjs.org"
-					target="_blank"
-					rel="noopener noreferrer"
-				>
-					Learn Reacts
-				</a>
-			</header>
+		<div className="todo__list">
+			{thingsTodo.map((element, i) => {
+				console.log(element, i);
+				return (
+					<div className={`todo__item td--${i}`} key={i}>
+						<TodoItems task={element} />
+					</div>
+				);
+			})}
 		</div>
 	);
 }
